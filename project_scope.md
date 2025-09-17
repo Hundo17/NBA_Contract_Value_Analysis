@@ -1,0 +1,1 @@
+## Project Scope\n- Analyze salary cap hit vs performance\n- Identify undervalued and overvalued players\n- Factor in injuries, trades, new contracts, rookie expectations\n- Deliver insights via Python, SQL, Excel, and Tableau
