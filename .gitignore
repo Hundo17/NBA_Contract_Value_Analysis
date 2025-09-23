@@ -82,5 +82,9 @@ data/raw/*
 
 # Allow processed/cleaned datasets
 data/clean/*
+<<<<<<< HEAD
 !data/clean/.gitkeep
 
+=======
+!data/clean/.gitkeep
+>>>>>>> c0942669 (Add Windows project setup: folder structure, datasets, notebooks, .gitignore)
