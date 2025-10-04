@@ -1,7 +1,3 @@
-venv/
-__pycache__/
-*.pyc
-=======
 # ------------------------
 # Python
 # ------------------------
@@ -76,15 +72,10 @@ $RECYCLE.BIN/
 # ------------------------
 # Data
 # ------------------------
-# Raw datasets (large files should stay local)
+# Raw datasets (large files should stay local, not pushed to GitHub)
 data/raw/*
 !data/raw/.gitkeep   # keep empty folder tracked
 
-# Allow processed/cleaned datasets
-data/clean/*
-<<<<<<< HEAD
+# Clean datasets (safe to push for analysis/recruiter review)
+!data/clean/*
 !data/clean/.gitkeep
-
-=======
-!data/clean/.gitkeep
->>>>>>> c0942669 (Add Windows project setup: folder structure, datasets, notebooks, .gitignore)
