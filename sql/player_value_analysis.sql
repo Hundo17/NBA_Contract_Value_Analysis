@@ -9,6 +9,15 @@ SELECT
     s.assists AS ast,
     s.total_rebounds AS reb,
     c.salary,
+
+    -- New: Salary tier grouping
+    CASE
+        WHEN c.salary < 2000000 THEN 'Minimum'
+        WHEN c.salary BETWEEN 2000000 AND 8000000 THEN 'Role Player'
+        WHEN c.salary BETWEEN 8000000 AND 20000000 THEN 'Starter'
+        ELSE 'Star / Max'
+    END AS salary_tier,
+
     a.per,
     a.ts_pct,
     a.ws,
@@ -20,4 +29,5 @@ LEFT JOIN contracts AS c
 LEFT JOIN adv AS a
     ON LOWER(s.player) = LOWER(a.player)
 WHERE c.salary IS NOT NULL
-    AND c.salary > 1157153;     /*Lowest rookie salary of the season*/
+  AND s.games >= 15
+  AND s.minutes_per_game >= 10;
