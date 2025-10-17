@@ -28,6 +28,7 @@ LEFT JOIN contracts AS c
     ON LOWER(s.player) = LOWER(c.player)
 LEFT JOIN adv AS a
     ON LOWER(s.player) = LOWER(a.player)
-WHERE c.salary IS NOT NULL
+WHERE c.salary >= 1000000
   AND s.games >= 15
-  AND s.minutes_per_game >= 10;
+  AND s.minutes_per_game >= 10
+  AND a.ws >= 1;
