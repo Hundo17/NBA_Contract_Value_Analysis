@@ -2,8 +2,7 @@ SELECT
     player,
     team,
     salary,
-    position,
-    per
+    ws
 FROM player_value_analysis
 WHERE salary IS NOT NULL
-ORDER BY per DESC;
+ORDER BY salary DESC;
