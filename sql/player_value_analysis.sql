@@ -12,9 +12,10 @@ SELECT
 
     -- New: Salary tier grouping
     CASE
-        WHEN c.salary < 5000000 THEN 'Role Player'
-        WHEN c.salary BETWEEN 5000000 AND 20000000 THEN 'Starter'
-        ELSE 'Star / Supermax'
+        WHEN c.salary BETWEEN 3000000 AND 12000000 THEN 'Role Player'
+        WHEN c.salary BETWEEN 12000000 AND 25000000 THEN 'Starter'
+        WHEN c.salary BETWEEN 25000000 AND 35000000 THEN 'Star'
+        ELSE 'Supermax'
     END AS salary_tier,
 
     a.per,
