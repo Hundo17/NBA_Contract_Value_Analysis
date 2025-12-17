@@ -1,71 +1,79 @@
 # NBA Contract Value Analysis
+Front-Office Analytics Business Case: Impact on Winning vs Cost
+(Python, SQL, Supabase, Tableau)
 
-## Goal
-Analyze how NBA player salaries relate to on-court effectiveness using advanced analytics.  
-This project explores whether player contracts accurately reflect their performance value, leveraging metrics such as Win Shares (WS) and Player Efficiency Rating (PER) to assess cost-efficiency and team impact.
+## Business Context
 
----
+NBA teams operate under a hard salary cap, requiring front offices to continuously balance payroll allocation against on-court impact. Every contract decision represents a tradeoff between cost and contribution to winning, where inefficient spending can limit roster depth, flexibility, and championship competitiveness.
 
-## Project Overview
-This project integrates **Python, SQL, Supabase, and Tableau** to evaluate the relationship between player salary and performance.  
-It identifies undervalued and overpaid players while visualizing how salary distribution impacts team success and efficiency across roles and positions.
+This project simulates a front-office analytics use case focused on evaluating how effectively salary dollars translate into on-court impact, and how teams can optimize roster construction to maximize wins under salary cap constraints.
 
-Data was cleaned and structured in Python and SQL, stored in a Supabase database, and visualized through Tableau dashboards.  
-Version control and updates were managed using **Git and GitHub**, ensuring an organized and trackable development process.
+## Business Objective
 
----
+The objective is to support salary cap management and roster decision-making by evaluating contracts through the lens of impact on winning relative to cost. Key questions include:
 
-## Data Sources
-- Kaggle (NBA Salary Data)  
-- Basketball Reference (Player Performance Metrics)  
-- Official NBA Stats API  
+- Which players generate the greatest on-court impact per dollar spent?
+- Where do salary inefficiencies reduce a team’s ability to win games?
+- When is paying a premium for elite talent justified by its impact on winning?
+- How does balanced roster construction influence overall team effectiveness?
 
----
+## Analytical and Technical Execution
 
-## Tools & Technologies
-- **Python (pandas, matplotlib)** – Cleaning, transformation, and exploration  
-- **SQL (Supabase)** – Querying, aggregations, and relationship modeling  
-- **Tableau** – Visualization and dashboard development  
-- **Git & GitHub** – Version control and project management  
+### Data Engineering and Integration
 
----
+- Ingested and cleaned player salary and performance data using Python (pandas)
+- Integrated advanced performance metrics including Win Shares (WS) and Player Efficiency Rating (PER) as proxies for on-court impact
+- Stored structured datasets in a Supabase-hosted Postgres database for scalable querying and validation
 
-## Key Dashboards
-### 1️⃣ Contract Efficiency Overview
-Highlights cost-efficiency rankings of players, teams, and positions using advanced performance data.  
-This view emphasizes where teams extract the most value per dollar spent.
+### Impact-to-Cost Contract Analysis
 
-### 2️⃣ Value vs Performance Impact Analysis
-Maps salary against PER and Win Shares to visualize efficiency trends.  
-Reveals how lower-earning players often provide stronger value, while supermax players maintain elite, championship-level impact.
+- Compared salary levels against performance metrics to evaluate value contribution to winning per dollar
+- Assessed efficiency trends across players, positions, and teams
+- Identified contracts where cost exceeds on-court impact and contracts where impact significantly outweighs cost
 
----
+### SQL-Based Validation
 
-## Analytical Summary
-This analysis shows that **high salaries don’t always equal high efficiency**.  
-Many lower-earning players deliver exceptional performance value relative to their cost, while elite players—though expensive—remain critical for competitive success.  
+- Queried player- and team-level aggregations using SQL
+- Validated efficiency rankings, positional trends, and team-level salary distributions directly from the database
+- Ensured analytical consistency across Python, SQL, and visualization layers
 
-The dashboards provide:  
-- Rankings of the most and least cost-effective players, teams, and positions  
-- A visual map showing salary-performance relationships  
-- Clear evidence that balanced roster construction leads to greater efficiency  
+### Visualization and Decision Support (Tableau)
 
----
+- Built interactive dashboards to support front-office decision-making:
+  - Contract Efficiency Overview (impact on winning relative to salary)
+  - Value vs Performance Impact Analysis (cost versus contribution to wins)
+- Dashboards enable comparison across players, teams, and positions to evaluate strategic tradeoffs
 
-## Tableau Dashboards
-- [NBA Contract Efficiency Overview](https://public.tableau.com/views/NBA_Player_Contract_Analysis_Dashboard/NBAContractEfficiencyOverview?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)  
-- [Value vs Performance Impact Analysis](https://public.tableau.com/views/NBA_Player_Contract_Analysis_Dashboard/ValuevsPerformanceImpactAnalysis?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+## Front-Office Takeaways
 
----
+- Many mid-salary players deliver strong on-court impact relative to cost, supporting roster depth and lineup flexibility
+- Supermax contracts are justified when tied to elite, win-driving performance, but introduce significant opportunity costs
+- Teams that distribute salary across multiple high-impact contributors often achieve stronger overall efficiency
+- Inefficient contracts reduce flexibility and indirectly limit a team’s ability to convert payroll into wins
 
-## Results
-- Identified inefficiencies in salary spending across multiple teams.  
-- Visualized the correlation between contract value and contribution to winning.  
-- Demonstrated how advanced analytics can support smarter salary cap allocation and player valuation.
+## Business Impact
 
----
+- Highlights where salary dollars are most effectively converted into on-court impact
+- Demonstrates how analytical evaluation of contracts supports smarter cap allocation
+- Reinforces the importance of balancing star power with cost-efficient contributors to maximize winning potential
 
-## Next Steps
-- Expand to include additional advanced metrics such as BPM, VORP, or RAPTOR.  
-- Integrate contract data with playoff performance metrics.  
-- Build Power BI or Excel-based versions to showcase broader analytical flexibility.
+## Front-Office Dashboards
+
+- [Tableau Contract Efficiency Overview](https://github.com/Hundo17/NBA_Contract_Value_Analysis/blob/main/dashboards/NBA%20Contract%20Efficiency%20Overview.pdf)
+
+- [Tableau Impact on Winning vs Cost Dashboard](https://github.com/Hundo17/NBA_Contract_Value_Analysis/blob/main/dashboards/Value%20vs%20Performance%20Impact%20Analysis.pdf)
+
+## Technical Stack Summary
+
+Python (pandas, matplotlib)  
+SQL (Postgres via Supabase)  
+Tableau  
+Git and GitHub
+
+## What This Project Demonstrates
+
+- Applied sports analytics under real salary cap constraints
+- Evaluation of contracts through impact-on-winning versus cost lenses
+- SQL-backed analytical validation
+- Executive-level visualization and storytelling
+- Translation of performance metrics into roster and salary allocation decisions
